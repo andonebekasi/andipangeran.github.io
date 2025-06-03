@@ -1,29 +1,124 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+Berikut adalah contoh file `index.html` sederhana yang menampilkan **portofolio pribadi**, **tautan ke sertifikat**, dan bagian lain seperti **tentang saya**, **kontak**, dan **projek**:
+
+```html
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Saya</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!-- index.html --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="id"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Portofolio Andi Pangeran&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Halo, saya Andi Pangeran&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;p&gt;Ini adalah portofolio saya.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+
+  <header>
+    <h1>Portofolio [Nama Anda]</h1>
+    <p>Web Developer | Cloud Enthusiast | IT Professional</p>
+  </header>
+
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#projek">Projek</a>
+    <a href="#sertifikat">Sertifikat</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <section id="tentang">
+    <h2>Tentang Saya</h2>
+    <div class="card">
+      <p>Saya adalah seorang profesional di bidang teknologi informasi dengan pengalaman dalam pengembangan web, cloud computing, dan manajemen sistem. Saya menyukai tantangan dan terus belajar hal baru.</p>
+    </div>
+  </section>
+
+  <section id="projek">
+    <h2>Projek</h2>
+    <div class="card">
+      <h3>Web Company Profile</h3>
+      <p>Sebuah website untuk profil perusahaan menggunakan HTML, CSS, dan JavaScript.</p>
+      <a href="https://github.com/username/project-company-profile" target="_blank">Lihat di GitHub</a>
+    </div>
+    <div class="card">
+      <h3>Sistem Inventaris</h3>
+      <p>Web app sederhana untuk manajemen inventaris menggunakan PHP dan MySQL.</p>
+      <a href="https://github.com/username/project-inventory" target="_blank">Lihat di GitHub</a>
+    </div>
+  </section>
+
+  <section id="sertifikat">
+    <h2>Sertifikat</h2>
+    <div class="card">
+      <ul>
+        <li><a href="https://www.linkedin.com/link-to-certificate-1" target="_blank">Microsoft Certified: Azure Fundamentals</a></li>
+        <li><a href="https://www.linkedin.com/link-to-certificate-2" target="_blank">Google IT Support Professional</a></li>
+        <li><a href="https://www.linkedin.com/link-to-certificate-3" target="_blank">AWS Cloud Practitioner</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak</h2>
+    <div class="card">
+      <p>Email: emailanda@example.com</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/username" target="_blank">linkedin.com/in/username</a></p>
+      <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 [Nama Anda]. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
+```
+
+---
+
+### Cara Pakai:
+
+1. **Ganti `[Nama Anda]`, `emailanda@example.com`, dan tautan GitHub/LinkedIn** dengan milik Anda.
+2. **Simpan file ini sebagai** `index.html`.
+3. **Host di GitHub Pages**, Vercel, Netlify, atau langsung di server/web hosting pribadi.
+
+Ingin versi dark mode, responsive penuh, atau tambahan fitur seperti form kontak? Saya bisa bantu lanjutkan.
