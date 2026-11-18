@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Saya</title>
+  <title>Portofolio Andi Pangeran</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,22 +15,63 @@
     header {
       background: #007bff;
       color: #fff;
-      padding: 20px;
+      padding: 25px 20px;
       text-align: center;
+      position: relative;
     }
     nav {
       background: #333;
       color: #fff;
-      padding: 10px;
-      text-align: center;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
     nav a {
       color: #fff;
-      margin: 0 15px;
       text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: #00bfff;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      background: #222;
+      border-radius: 20px;
+      padding: 3px;
+      border: 1px solid #444;
+      align-items: center;
+    }
+    .lang-btn {
+      background: transparent;
+      color: #aaa;
+      border: none;
+      border-radius: 16px;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover {
+      color: #fff;
+    }
+    .lang-btn.active {
+      background: #007bff;
+      color: #fff;
     }
     section {
       padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
     .card {
       background: white;
@@ -39,137 +80,267 @@
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
+    .card a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
     footer {
       background: #007bff;
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    /* Language display toggle */
+    html[lang="id"] .lang-en {
+      display: none !important;
+    }
+    html[lang="en"] .lang-id {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+      }
+      .nav-links {
+        justify-content: center;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Portofolio Andi Pangeran</h1>
+    <h1 class="lang-id">Portofolio Andi Pangeran</h1>
+    <h1 class="lang-en">Andi Pangeran's Portfolio</h1>
     <p>DevOps/DevSecOps | Cloud Enthusiast | IT Professional</p>
   </header>
 
   <nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#projek">Projek</a>
-    <a href="#sertifikat">Sertifikat</a>
-    <a href="#kontak">Kontak</a>
+    <div class="nav-links">
+      <a href="#tentang">
+        <span class="lang-id">Tentang</span>
+        <span class="lang-en">About</span>
+      </a>
+      <a href="#projek">
+        <span class="lang-id">Projek</span>
+        <span class="lang-en">Projects</span>
+      </a>
+      <a href="#sertifikat">
+        <span class="lang-id">Sertifikat</span>
+        <span class="lang-en">Certifications</span>
+      </a>
+      <a href="#kontak">
+        <span class="lang-id">Kontak</span>
+        <span class="lang-en">Contact</span>
+      </a>
+    </div>
+    <div class="lang-switcher" role="group" aria-label="Language Selector">
+      <button type="button" class="lang-btn active" data-lang="id" onclick="setLanguage('id')">ID</button>
+      <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+    </div>
   </nav>
 
   <section id="tentang">
-    <h2>Tentang Saya</h2>
+    <h2 class="lang-id">Tentang Saya</h2>
+    <h2 class="lang-en">About Me</h2>
     <div class="card">
-      <p>Saya adalah seorang profesional di bidang teknologi informasi dengan pengalaman dalam Devops/DevSecops/Infrastructure/Virtualization, Cloud Computing, dan Manajemen Sistem. Saya menyukai tantangan dan terus belajar hal baru.</p>
+      <p class="lang-id">Saya adalah seorang profesional di bidang teknologi informasi dengan pengalaman dalam DevOps/DevSecOps/Infrastructure/Virtualization, Cloud Computing, dan Manajemen Sistem. Saya menyukai tantangan dan terus belajar hal baru.</p>
+      <p class="lang-en">I am an IT professional with experience in DevOps/DevSecOps/Infrastructure/Virtualization, Cloud Computing, and Systems Management. I embrace challenges and continuously strive to learn new things.</p>
     </div>
   </section>
 
   <section id="projek">
-    <h2>Projek</h2>
+    <h2 class="lang-id">Projek</h2>
+    <h2 class="lang-en">Projects</h2>
+
     <div class="card">
       <h3>AzureDevops+AppService</h3>
-      <p>AzureDevops+AppService.</p>
-      <a href="https://docs.google.com/document/d/1noJNQ9YMMwo5_gCN19XDToAl49TuLJOJ8gH5i9nzoog/edit?tab=t.0" target="_blank">Lihat di GitHub</a>
+      <p class="lang-id">Implementasi pipeline CI/CD Azure DevOps dengan deployment ke Azure App Service.</p>
+      <p class="lang-en">CI/CD pipeline implementation with Azure DevOps and deployment to Azure App Service.</p>
+      <a href="https://docs.google.com/document/d/1noJNQ9YMMwo5_gCN19XDToAl49TuLJOJ8gH5i9nzoog/edit?tab=t.0" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
       <h3>DAST Automation with OWASP ZAP + Github Action</h3>
-      <p>DAST Automation with OWASP ZAP + Github Action</p>
-      <a href="https://docs.google.com/document/d/1B7jN3nCD57b-IsyC811osRskvpn3dbR-GJOwRFeRjxY/edit?tab=t.0" target="_blank">Lihat di GitHub</a>
+      <p class="lang-id">Otomasi pengujian keamanan dinamis (DAST) menggunakan OWASP ZAP terintegrasi dengan GitHub Actions.</p>
+      <p class="lang-en">DAST automation integration using OWASP ZAP and GitHub Actions for continuous security testing.</p>
+      <a href="https://docs.google.com/document/d/1B7jN3nCD57b-IsyC811osRskvpn3dbR-GJOwRFeRjxY/edit?tab=t.0" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
       <h3>Bitbucket+CloudBuild+GKE(kubernetes)</h3>
-      <p>Bitbucket+CloudBuild+GKE(kubernetes)</p>
-      <a href="https://docs.google.com/document/d/12uU1Dfsq3mleBL2Dz7OqnoCu9-88zscUKcq6uvdgDh0/edit?tab=t.0" target="_blank">Lihat di GitHub</a>
+      <p class="lang-id">Alur CI/CD menggunakan Bitbucket, Google Cloud Build, dan deployment ke Google Kubernetes Engine (GKE).</p>
+      <p class="lang-en">CI/CD workflow using Bitbucket, Google Cloud Build, and deployment to Google Kubernetes Engine (GKE).</p>
+      <a href="https://docs.google.com/document/d/12uU1Dfsq3mleBL2Dz7OqnoCu9-88zscUKcq6uvdgDh0/edit?tab=t.0" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
-      <h3>SCA(Software Composition Analysis) dan SAST(Static Application Security Testing) menggunakan Snyk dengan aplikasi sederhana Hello World + GitHub</h3>
-      <p>SCA(Software Composition Analysis) dan SAST(Static Application Security Testing) menggunakan Snyk dengan aplikasi sederhana Hello World + GitHub</p>
-      <a href="https://docs.google.com/document/d/14g4Wx-VSndaENv0Rc9Wh6s3WxbALIzHWss0nkkdflLA/edit?tab=t.0" target="_blank">Lihat di GitHub</a>
+      <h3 class="lang-id">SCA(Software Composition Analysis) dan SAST(Static Application Security Testing) menggunakan Snyk dengan aplikasi sederhana Hello World + GitHub</h3>
+      <h3 class="lang-en">SCA (Software Composition Analysis) and SAST (Static Application Security Testing) using Snyk with Hello World app + GitHub</h3>
+      <p class="lang-id">Penerapan pemindaian keamanan kode sumber (SAST & SCA) menggunakan Snyk yang terintegrasi pada repositori GitHub.</p>
+      <p class="lang-en">Source code security scanning (SAST & SCA) implementation using Snyk integrated into GitHub repositories.</p>
+      <a href="https://docs.google.com/document/d/14g4Wx-VSndaENv0Rc9Wh6s3WxbALIzHWss0nkkdflLA/edit?tab=t.0" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
-      <h3>Trivy Scan di GitHub Actions dengan Docker Hub</h3>
-      <p>Trivy Scan di GitHub Actions dengan Docker Hub</p>
-      <a href="https://docs.google.com/document/d/1PsqvZbQ3HWqhmU3XcFgAPmL9ZT0vmTXXA5yr0c-igbw/edit?tab=t.0" target="_blank">Lihat di GitHub</a>
+      <h3 class="lang-id">Trivy Scan di GitHub Actions dengan Docker Hub</h3>
+      <h3 class="lang-en">Trivy Scan in GitHub Actions with Docker Hub</h3>
+      <p class="lang-id">Pemindaian kerentanan container image secara otomatis menggunakan Trivy di GitHub Actions dan push ke Docker Hub.</p>
+      <p class="lang-en">Automated container image vulnerability scanning using Trivy in GitHub Actions and pushing to Docker Hub.</p>
+      <a href="https://docs.google.com/document/d/1PsqvZbQ3HWqhmU3XcFgAPmL9ZT0vmTXXA5yr0c-igbw/edit?tab=t.0" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
-      <h3>Monitoring GKE dengan Prometheus dan Grafana</h3>
-      <p>Monitoring GKE dengan Prometheus dan Grafana</p>
-      <a href="https://docs.google.com/document/d/1mPTYv5xs5YzcAL5gwHPKn3qe7bmSIhVbeoHPorOBpLI/edit?tab=t.0" target="_blank">Lihat di GitHub</a>
+      <h3 class="lang-id">Monitoring GKE dengan Prometheus dan Grafana</h3>
+      <h3 class="lang-en">GKE Monitoring with Prometheus and Grafana</h3>
+      <p class="lang-id">Pengaturan sistem monitoring cluster Kubernetes (GKE) menggunakan Prometheus untuk metrik dan Grafana untuk dashboard visualisasi.</p>
+      <p class="lang-en">Kubernetes cluster (GKE) monitoring setup using Prometheus for metrics collection and Grafana for dashboards.</p>
+      <a href="https://docs.google.com/document/d/1mPTYv5xs5YzcAL5gwHPKn3qe7bmSIhVbeoHPorOBpLI/edit?tab=t.0" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
       <h3>CI/CD</h3>
-      <p>CI/CD</p>
-      <a href="https://docs.google.com/presentation/d/1bGdVrI2tGRJXYM8lBikQxWtcPPDdO_z_/edit?slide=id.g278b984a227_0_22#slide=id.g278b984a227_0_22" target="_blank">Lihat di GitHub</a>
+      <p class="lang-id">Materi dan presentasi pengenalan konsep alur CI/CD modern.</p>
+      <p class="lang-en">Presentation and guide on modern CI/CD pipeline concepts and practices.</p>
+      <a href="https://docs.google.com/presentation/d/1bGdVrI2tGRJXYM8lBikQxWtcPPDdO_z_/edit?slide=id.g278b984a227_0_22#slide=id.g278b984a227_0_22" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
-      <h3>Simulasi CI/CD lengkap menggunakan Jenkins + Snyk untuk deploy aplikasi "Hello World" ke Azure App Service</h3>
-      <p>Simulasi CI/CD lengkap menggunakan Jenkins + Snyk untuk deploy aplikasi "Hello World" ke Azure App Service</p>
-      <a href="https://docs.google.com/document/d/1lYm4KSKlZPekBZuFKADte6vHjHHy8VsaSXGCEjN59RQ/edit?tab=t.0" target="_blank">Lihat di GitHub</a>
+      <h3 class="lang-id">Simulasi CI/CD lengkap menggunakan Jenkins + Snyk untuk deploy aplikasi "Hello World" ke Azure App Service</h3>
+      <h3 class="lang-en">Complete CI/CD simulation using Jenkins + Snyk to deploy "Hello World" to Azure App Service</h3>
+      <p class="lang-id">Simulasi alur CI/CD end-to-end menggunakan Jenkins dengan integrasi pemindaian keamanan Snyk ke Azure App Service.</p>
+      <p class="lang-en">End-to-end CI/CD pipeline simulation using Jenkins with Snyk security scanning integration deploying to Azure App Service.</p>
+      <a href="https://docs.google.com/document/d/1lYm4KSKlZPekBZuFKADte6vHjHHy8VsaSXGCEjN59RQ/edit?tab=t.0" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
-      <h3>simulasi CI/CD deploy Node.js Hello World ke Azure App Service via CircleCI</h3>
-      <p>simulasi CI/CD deploy Node.js Hello World ke Azure App Service via CircleCI</p>
-      <a href="https://docs.google.com/document/d/1TkfZ--ilvP4pSQRUBlIRST1ZuLlTjpQBLF9xdC9U_hU/edit?tab=t.0" target="_blank">Lihat di GitHub</a>
+      <h3 class="lang-id">Simulasi CI/CD deploy Node.js Hello World ke Azure App Service via CircleCI</h3>
+      <h3 class="lang-en">CI/CD simulation deploying Node.js Hello World to Azure App Service via CircleCI</h3>
+      <p class="lang-id">Simulasi pipeline CI/CD otomatis untuk deployment aplikasi Node.js ke Azure App Service menggunakan CircleCI.</p>
+      <p class="lang-en">Automated CI/CD pipeline simulation for deploying a Node.js app to Azure App Service via CircleCI.</p>
+      <a href="https://docs.google.com/document/d/1TkfZ--ilvP4pSQRUBlIRST1ZuLlTjpQBLF9xdC9U_hU/edit?tab=t.0" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
-      <h3>simulasi Chatbot RAG (Retrieval-Augmented Generation) yang bisa Text-to-Image menggunakan Azure Foundry</h3>
-      <p>simulasi Chatbot RAG (Retrieval-Augmented Generation) yang bisa Text-to-Image menggunakan Azure Foundry</p>
-      <a href="https://docs.google.com/document/d/1Dey-D1GHItxLfFRwPPAHPHBqwHMMCh8eXT3uAum4wIg/edit?usp=sharing" target="_blank">Lihat di GitHub</a>
+      <h3 class="lang-id">Simulasi Chatbot RAG (Retrieval-Augmented Generation) yang bisa Text-to-Image menggunakan Azure Foundry</h3>
+      <h3 class="lang-en">RAG (Retrieval-Augmented Generation) Chatbot simulation with Text-to-Image using Azure Foundry</h3>
+      <p class="lang-id">Simulasi implementasi chatbot RAG dengan kemampuan multimodal text-to-image menggunakan Azure AI Foundry.</p>
+      <p class="lang-en">RAG chatbot implementation simulation with multimodal text-to-image capabilities powered by Azure AI Foundry.</p>
+      <a href="https://docs.google.com/document/d/1Dey-D1GHItxLfFRwPPAHPHBqwHMMCh8eXT3uAum4wIg/edit?usp=sharing" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
-    </div>
+
     <div class="card">
-      <h3>simulasi MCP (Model Context Protocol) untuk mengecek service di Azure dan melakukan start/stop service</h3>
-      <p>simulasi MCP (Model Context Protocol) untuk mengecek service di Azure dan melakukan start/stop service</p>
-      <a href="https://docs.google.com/document/d/1YBTc6XXJfXQhnEOdHJE__pBOo0LX_E76YZHYp5zYnQY/edit?usp=sharing" target="_blank">Lihat di GitHub</a>
+      <h3 class="lang-id">Simulasi MCP (Model Context Protocol) untuk mengecek service di Azure dan melakukan start/stop service</h3>
+      <h3 class="lang-en">MCP (Model Context Protocol) simulation for Azure service status check and start/stop controls</h3>
+      <p class="lang-id">Simulasi MCP server untuk memantau status service di Azure serta melakukan kontrol start dan stop service secara terotomasi.</p>
+      <p class="lang-en">Model Context Protocol (MCP) server simulation to inspect Azure services and automate start/stop operations.</p>
+      <a href="https://docs.google.com/document/d/1YBTc6XXJfXQhnEOdHJE__pBOo0LX_E76YZHYp5zYnQY/edit?usp=sharing" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
       <h3>Demo Azure OpenAI ChatGPT</h3>
-      <p>Demo Azure OpenAI ChatGPT</p>
-      <a href="https://docs.google.com/document/d/1N2L_B1yxNXzs6CsMMlO8qYbdf1Bw9xPUivbMr7xmyXw/edit?usp=sharing" target="_blank">Lihat di GitHub</a>
+      <p class="lang-id">Demonstrasi implementasi dan integrasi layanan Azure OpenAI ChatGPT.</p>
+      <p class="lang-en">Demonstration of integration and usage with Azure OpenAI ChatGPT service.</p>
+      <a href="https://docs.google.com/document/d/1N2L_B1yxNXzs6CsMMlO8qYbdf1Bw9xPUivbMr7xmyXw/edit?usp=sharing" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
+
     <div class="card">
-      <h3>Simulasi Azure AI Foundry untuk Text-to-Video menggunakan docker compose</h3>
-      <p>Simulasi Azure AI Foundry untuk Text-to-Video menggunakan docker compose</p>
-      <a href="https://docs.google.com/document/d/17TATphG26PyW2XZuMa2xqPTikFmsrt0EHKodSwqVIKA/edit?usp=sharing" target="_blank">Lihat di GitHub</a>
+      <h3 class="lang-id">Simulasi Azure AI Foundry untuk Text-to-Video menggunakan Docker Compose</h3>
+      <h3 class="lang-en">Azure AI Foundry simulation for Text-to-Video using Docker Compose</h3>
+      <p class="lang-id">Simulasi pipeline AI untuk generasi text-to-video berbasis Azure AI Foundry yang dijalankan dengan Docker Compose.</p>
+      <p class="lang-en">AI pipeline simulation for text-to-video generation using Azure AI Foundry orchestrated with Docker Compose.</p>
+      <a href="https://docs.google.com/document/d/17TATphG26PyW2XZuMa2xqPTikFmsrt0EHKodSwqVIKA/edit?usp=sharing" target="_blank">
+        <span class="lang-id">Lihat di GitHub</span>
+        <span class="lang-en">View on GitHub</span>
+      </a>
     </div>
   </section>
 
   <section id="sertifikat">
-    <h2>Sertifikat</h2>
+    <h2 class="lang-id">Sertifikat</h2>
+    <h2 class="lang-en">Certifications</h2>
     <div class="card">
       <ul>
         <li><a href="https://cp.certmetrics.com/vmware/en/public/transcript/Y5JNFMXC1FEQQQ9Q" target="_blank">VMware Certification</a></li>
         <li><a href="https://learn.microsoft.com/en-us/users/andipangeran-4674/transcript/vpmlwuxpygple5r" target="_blank">Microsoft Certification</a></li>
-        <li><a href="https://www.credly.com/users/andi-pangeran/badges" target="_blank">List All Certification</a></li>
+        <li>
+          <a href="https://www.credly.com/users/andi-pangeran/badges" target="_blank">
+            <span class="lang-id">Lihat Semua Sertifikat</span>
+            <span class="lang-en">List All Certifications</span>
+          </a>
+        </li>
         <li><a href="https://drive.google.com/file/d/1Z0taQGq6kq_X5Miy0sN0bRsqIgz1tpRf/view?usp=sharing" target="_blank">AWS Certified Security - Specialty</a></li>
         <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/1ad2556b9ed5484883a79c9637a9a70f" target="_blank">AWS Certified AI Practitioner</a></li>
         <li><a href="https://www.credly.com/earner/earned/badge/6b616c66-5cce-4ea3-9370-738d02fdaa81" target="_blank">AWS Certified Cloud Practitioner</a></li>
         <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2ddc37ecc9354af39638cafe78f2dc2c" target="_blank">AWS Certified Solutions Architect - Professional</a></li>
-        <li><a href="https://openprofile.dev/profile/andonebekasi" target="_blank">Linux Foundation Certification </a></li>
-        <li><a href="https://cp.certmetrics.com/hashicorp/en/public/transcript/5a3dcb4a3d0542fbb0e1d93bd99beb42" target="_blank">Hashicorp Certification </a></li>
-        <li><a href="https://certopus.com/c/8df160a210f74340845c0e123a4f1aef" target="_blank">Certified Practical Red Team Pentester </a></li>
-        <li><a href="https://certopus.com/c/af89d1c8901645dc8f4d4fd26ba9d567" target="_blank">Certified Practical Blue Team Cyber Threat Hunter </a></li>
-        <li><a href="https://www.virtualbadge.io/certificate-validator?credential=a24b8351-cdac-4bc4-93a2-8ba641e0c352" target="_blank">Certified Best Student DevOps Engineer </a></li>
-        <li><a href="https://www.credential.net/profile/andipangeran132447/wallet#gs.cgvkhv" target="_blank">Certified Security </a></li>
-        <li><a href="https://certopus.com/c/11a1168087eb46a2bed3ba7ca8f5d73f" target="_blank">Certified Practical DevSecOps Engineer </a></li>
-        <li><a href="https://www.credly.com/badges/2ec1a924-6517-4da5-b627-bc4326f6cd16" target="_blank">CompTIA Security+ ce Certification </a></li>
-        <li><a href="https://www.credly.com/badges/a71c87ea-7fa8-43c6-854c-d5e7cde5d17d" target="_blank">Red Hat Certified System Administrator (RHCSA) </a></li>
-        <li><a href="https://www.credly.com/badges/87324d08-134c-49a1-9530-5952cace2944" target="_blank">Professional Cloud Security Engineer Google Cloud </a></li>
-        <li><a href="https://www.credly.com/earner/earned/badge/5fb247cb-c068-47d4-b437-8440d70c3ecf" target="_blank">Professional Cloud Network Engineer Certification </a></li>
-        <li><a href="https://www.credly.com/badges/dd86d665-91cc-449c-87e2-641c7fac8923" target="_blank">Professional Cloud Architect Certification Google Cloud </a></li>
-        <li><a href="https://www.credly.com/badges/dd0b4192-43ef-451e-8ded-fa7524470ffb/public_url" target="_blank">Professional Cloud DevOps Engineer Certification </a></li>
-        <li><a href="https://www.credly.com/badges/b1d23bc8-d93d-496a-8af6-2c27c9596b7f" target="_blank">CompTIA Linux+ ce Certification </a></li>
-        <li><a href="https://drive.google.com/file/d/1V5JOEfZr-l-59nIXDgSn9HdfapwsJpyl/view?usp=sharing" target="_blank">Microsoft Certified Trainer </a></li>
+        <li><a href="https://openprofile.dev/profile/andonebekasi" target="_blank">Linux Foundation Certification</a></li>
+        <li><a href="https://cp.certmetrics.com/hashicorp/en/public/transcript/5a3dcb4a3d0542fbb0e1d93bd99beb42" target="_blank">Hashicorp Certification</a></li>
+        <li><a href="https://certopus.com/c/8df160a210f74340845c0e123a4f1aef" target="_blank">Certified Practical Red Team Pentester</a></li>
+        <li><a href="https://certopus.com/c/af89d1c8901645dc8f4d4fd26ba9d567" target="_blank">Certified Practical Blue Team Cyber Threat Hunter</a></li>
+        <li><a href="https://www.virtualbadge.io/certificate-validator?credential=a24b8351-cdac-4bc4-93a2-8ba641e0c352" target="_blank">Certified Best Student DevOps Engineer</a></li>
+        <li><a href="https://www.credential.net/profile/andipangeran132447/wallet#gs.cgvkhv" target="_blank">Certified Security</a></li>
+        <li><a href="https://certopus.com/c/11a1168087eb46a2bed3ba7ca8f5d73f" target="_blank">Certified Practical DevSecOps Engineer</a></li>
+        <li><a href="https://www.credly.com/badges/2ec1a924-6517-4da5-b627-bc4326f6cd16" target="_blank">CompTIA Security+ ce Certification</a></li>
+        <li><a href="https://www.credly.com/badges/a71c87ea-7fa8-43c6-854c-d5e7cde5d17d" target="_blank">Red Hat Certified System Administrator (RHCSA)</a></li>
+        <li><a href="https://www.credly.com/badges/87324d08-134c-49a1-9530-5952cace2944" target="_blank">Professional Cloud Security Engineer Google Cloud</a></li>
+        <li><a href="https://www.credly.com/earner/earned/badge/5fb247cb-c068-47d4-b437-8440d70c3ecf" target="_blank">Professional Cloud Network Engineer Certification</a></li>
+        <li><a href="https://www.credly.com/badges/dd86d665-91cc-449c-87e2-641c7fac8923" target="_blank">Professional Cloud Architect Certification Google Cloud</a></li>
+        <li><a href="https://www.credly.com/badges/dd0b4192-43ef-451e-8ded-fa7524470ffb/public_url" target="_blank">Professional Cloud DevOps Engineer Certification</a></li>
+        <li><a href="https://www.credly.com/badges/b1d23bc8-d93d-496a-8af6-2c27c9596b7f" target="_blank">CompTIA Linux+ ce Certification</a></li>
+        <li><a href="https://drive.google.com/file/d/1V5JOEfZr-l-59nIXDgSn9HdfapwsJpyl/view?usp=sharing" target="_blank">Microsoft Certified Trainer</a></li>
       </ul>
     </div>
   </section>
 
   <section id="kontak">
-    <h2>Kontak</h2>
+    <h2 class="lang-id">Kontak</h2>
+    <h2 class="lang-en">Contact</h2>
     <div class="card">
       <p>Email: ..@gmail.com</p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/andi-pangeran-a125b1b8" target="_blank">https://www.linkedin.com/in/andi-pangeran-a125b1b8</a></p>
@@ -180,8 +351,57 @@
   </section>
 
   <footer>
-    <p>© 2025 Andi Pangeran. All rights reserved.</p>
+    <p class="lang-id">© 2025 Andi Pangeran. Hak cipta dilindungi undang-undang.</p>
+    <p class="lang-en">© 2025 Andi Pangeran. All rights reserved.</p>
   </footer>
+
+  <script>
+    function setLanguage(lang) {
+      if (lang !== 'id' && lang !== 'en') {
+        lang = 'id';
+      }
+
+      // Update root lang attribute
+      document.documentElement.lang = lang;
+
+      // Update document title
+      if (lang === 'id') {
+        document.title = 'Portofolio Andi Pangeran';
+      } else {
+        document.title = "Andi Pangeran's Portfolio";
+      }
+
+      // Update button active state
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        if (btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Persist choice to localStorage
+      try {
+        localStorage.setItem('preferred_lang', lang);
+      } catch (e) {
+        // Handle private browsing or storage disabled
+      }
+    }
+
+    // Initialize with default Indonesia or saved preference
+    (function() {
+      let defaultLang = 'id';
+      try {
+        const saved = localStorage.getItem('preferred_lang');
+        if (saved === 'en' || saved === 'id') {
+          defaultLang = saved;
+        }
+      } catch (e) {
+        // Ignore storage read error
+      }
+      setLanguage(defaultLang);
+    })();
+  </script>
 
 </body>
 </html>
